@@ -1,0 +1,63 @@
+AvgTime:53Milisecs NumberOfProcess:1 NumberOfIterations: 1
+AvgTime:54Milisecs NumberOfProcess:1 NumberOfIterations: 2
+AvgTime:53Milisecs NumberOfProcess:1 NumberOfIterations: 100
+AvgTime:56Milisecs NumberOfProcess:1 NumberOfIterations: 500
+AvgTime:52Milisecs NumberOfProcess:1 NumberOfIterations: 1000
+AvgTime:52Milisecs NumberOfProcess:1 NumberOfIterations: 5000
+AvgTime:53Milisecs NumberOfProcess:1 NumberOfIterations: 10000
+
+AvgTime:54Milisecs NumberOfProcess:2 NumberOfIterations: 1
+AvgTime:55Milisecs NumberOfProcess:2 NumberOfIterations: 2
+AvgTime:54.5Milisecs NumberOfProcess:2 NumberOfIterations: 100
+AvgTime:55.5Milisecs NumberOfProcess:2 NumberOfIterations: 500
+AvgTime:57.5Milisecs NumberOfProcess:2 NumberOfIterations: 1000
+AvgTime:55.5Milisecs NumberOfProcess:2 NumberOfIterations: 5000
+AvgTime:55.5Milisecs NumberOfProcess:2 NumberOfIterations: 10000
+
+AvgTime:63Milisecs NumberOfProcess:4 NumberOfIterations: 1
+AvgTime:63.5Milisecs NumberOfProcess:4 NumberOfIterations: 2
+AvgTime:62.75Milisecs NumberOfProcess:4 NumberOfIterations: 100
+AvgTime:64.25Milisecs NumberOfProcess:4 NumberOfIterations: 500
+AvgTime:63.25Milisecs NumberOfProcess:4 NumberOfIterations: 1000
+AvgTime:65Milisecs NumberOfProcess:4 NumberOfIterations: 5000
+AvgTime:63.5Milisecs NumberOfProcess:4 NumberOfIterations: 10000
+
+AvgTime:89.375Milisecs NumberOfProcess:8 NumberOfIterations: 1
+AvgTime:93.125Milisecs NumberOfProcess:8 NumberOfIterations: 2
+AvgTime:98.75Milisecs NumberOfProcess:8 NumberOfIterations: 100
+AvgTime:87.875Milisecs NumberOfProcess:8 NumberOfIterations: 500
+AvgTime:87.625Milisecs NumberOfProcess:8 NumberOfIterations: 1000
+AvgTime:86.25Milisecs NumberOfProcess:8 NumberOfIterations: 5000
+AvgTime:85.75Milisecs NumberOfProcess:8 NumberOfIterations: 10000
+
+AvgTime:120.5Milisecs NumberOfProcess:16 NumberOfIterations: 1
+AvgTime:121.5625Milisecs NumberOfProcess:16 NumberOfIterations: 2
+AvgTime:114.25Milisecs NumberOfProcess:16 NumberOfIterations: 100
+AvgTime:112.4375Milisecs NumberOfProcess:16 NumberOfIterations: 500
+AvgTime:119.1875Milisecs NumberOfProcess:16 NumberOfIterations: 1000
+AvgTime:115.75Milisecs NumberOfProcess:16 NumberOfIterations: 5000
+AvgTime:123.25Milisecs NumberOfProcess:16 NumberOfIterations: 10000
+
+AvgTime:114.84375Milisecs NumberOfProcess:32 NumberOfIterations: 1
+AvgTime:113.40625Milisecs NumberOfProcess:32 NumberOfIterations: 2
+AvgTime:111.625Milisecs NumberOfProcess:32 NumberOfIterations: 100
+AvgTime:122.46875Milisecs NumberOfProcess:32 NumberOfIterations: 500
+AvgTime:123.8125Milisecs NumberOfProcess:32 NumberOfIterations: 1000
+AvgTime:113.28125Milisecs NumberOfProcess:32 NumberOfIterations: 5000
+AvgTime:115.84375Milisecs NumberOfProcess:32 NumberOfIterations: 10000
+
+AvgTime:132.4765625Milisecs NumberOfProcess:128 NumberOfIterations: 1
+AvgTime:133.046875Milisecs NumberOfProcess:128 NumberOfIterations: 2
+AvgTime:130.15625Milisecs NumberOfProcess:128 NumberOfIterations: 100
+AvgTime:131.828125Milisecs NumberOfProcess:128 NumberOfIterations: 500
+AvgTime:135.5859375Milisecs NumberOfProcess:128 NumberOfIterations: 1000
+AvgTime:130.71875Milisecs NumberOfProcess:128 NumberOfIterations: 5000
+AvgTime:130.390625Milisecs NumberOfProcess:128 NumberOfIterations: 10000
+
+AvgTime:131.828125Milisecs NumberOfProcess:256 NumberOfIterations: 1
+AvgTime:136.46484375Milisecs NumberOfProcess:256 NumberOfIterations: 2
+AvgTime:135.23046875Milisecs NumberOfProcess:256 NumberOfIterations: 100
+AvgTime:136.78125Milisecs NumberOfProcess:256 NumberOfIterations: 500
+AvgTime:135.65234375Milisecs NumberOfProcess:256 NumberOfIterations: 1000
+AvgTime:133.32421875Milisecs NumberOfProcess:256 NumberOfIterations: 5000
+AvgTime:133.51171875Milisecs NumberOfProcess:256 NumberOfIterations: 10000

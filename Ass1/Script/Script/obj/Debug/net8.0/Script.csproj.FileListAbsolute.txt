@@ -1,0 +1,14 @@
+C:\Users\ilay\source\repos\Script\Script\bin\Debug\net8.0\Script.exe
+C:\Users\ilay\source\repos\Script\Script\bin\Debug\net8.0\Script.deps.json
+C:\Users\ilay\source\repos\Script\Script\bin\Debug\net8.0\Script.runtimeconfig.json
+C:\Users\ilay\source\repos\Script\Script\bin\Debug\net8.0\Script.dll
+C:\Users\ilay\source\repos\Script\Script\bin\Debug\net8.0\Script.pdb
+C:\Users\ilay\source\repos\Script\Script\obj\Debug\net8.0\Script.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilay\source\repos\Script\Script\obj\Debug\net8.0\Script.AssemblyInfoInputs.cache
+C:\Users\ilay\source\repos\Script\Script\obj\Debug\net8.0\Script.AssemblyInfo.cs
+C:\Users\ilay\source\repos\Script\Script\obj\Debug\net8.0\Script.csproj.CoreCompileInputs.cache
+C:\Users\ilay\source\repos\Script\Script\obj\Debug\net8.0\Script.dll
+C:\Users\ilay\source\repos\Script\Script\obj\Debug\net8.0\refint\Script.dll
+C:\Users\ilay\source\repos\Script\Script\obj\Debug\net8.0\Script.pdb
+C:\Users\ilay\source\repos\Script\Script\obj\Debug\net8.0\Script.genruntimeconfig.cache
+C:\Users\ilay\source\repos\Script\Script\obj\Debug\net8.0\ref\Script.dll

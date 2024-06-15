@@ -1,0 +1,10 @@
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\bin\Debug\DDOSAttack.exe.config
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\bin\Debug\DDOSAttack.exe
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\bin\Debug\DDOSAttack.pdb
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\obj\Debug\DDOSAttack.csproj.AssemblyReference.cache
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\obj\Debug\DDOSAttack.Form1.resources
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\obj\Debug\DDOSAttack.Properties.Resources.resources
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\obj\Debug\DDOSAttack.csproj.GenerateResource.cache
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\obj\Debug\DDOSAttack.csproj.CoreCompileInputs.cache
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\obj\Debug\DDOSAttack.exe
+C:\Users\ilay\source\repos\DDOSAttack\DDOSAttack\obj\Debug\DDOSAttack.pdb

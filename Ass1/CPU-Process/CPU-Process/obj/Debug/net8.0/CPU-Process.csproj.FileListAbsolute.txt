@@ -1,0 +1,14 @@
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\bin\Debug\net8.0\CPU-Process.exe
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\bin\Debug\net8.0\CPU-Process.deps.json
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\bin\Debug\net8.0\CPU-Process.runtimeconfig.json
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\bin\Debug\net8.0\CPU-Process.dll
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\bin\Debug\net8.0\CPU-Process.pdb
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\obj\Debug\net8.0\CPU-Process.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\obj\Debug\net8.0\CPU-Process.AssemblyInfoInputs.cache
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\obj\Debug\net8.0\CPU-Process.AssemblyInfo.cs
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\obj\Debug\net8.0\CPU-Process.csproj.CoreCompileInputs.cache
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\obj\Debug\net8.0\CPU-Process.dll
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\obj\Debug\net8.0\refint\CPU-Process.dll
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\obj\Debug\net8.0\CPU-Process.pdb
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\obj\Debug\net8.0\CPU-Process.genruntimeconfig.cache
+C:\Users\ilay\source\repos\CPU-Process\CPU-Process\obj\Debug\net8.0\ref\CPU-Process.dll
