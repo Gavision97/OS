@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -71,33 +71,5 @@ class MTMergeSort
 
         // Finally, return the result
         return result;
-    }
-}
-
-class Program
-{
-    static void Main()
-    {
-        // Generate a large list of unsorted strings for testing
-        List<string> strList = new List<string>();
-        Random rand = new Random();
-        for (int i = 0; i < 100000; i++)
-        {
-            strList.Add(new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10)
-                                            .Select(s => s[rand.Next(s.Length)]).ToArray()));
-        }
-
-        MTMergeSort sorter = new MTMergeSort();
-
-        // Sort the list using multi-threaded merge sort
-        List<string> sortedList = sorter.MergeSort(strList.ToArray(), 1000);
-
-        // Output part of the sorted list to verify correctness
-        for (int i = 0; i < 10; i++)
-        {
-            Console.WriteLine(sortedList[i]);
-        }
-
-        Console.WriteLine("Sorting completed.");
     }
 }

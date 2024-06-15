@@ -1,0 +1,86 @@
+// add this in order to check the merge sort
+
+class Program
+{
+    static void Main()
+    {
+        // Generate a large list of unsorted strings for testing
+        List<string> strList = new List<string>();
+        Random rand = new Random();
+        for (int i = 0; i < 100000; i++)
+        {
+            strList.Add(new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10)
+                                            .Select(s => s[rand.Next(s.Length)]).ToArray()));
+        }
+
+        MTMergeSort sorter = new MTMergeSort();
+
+        // Sort the list using multi-threaded merge sort
+        List<string> sortedList = sorter.MergeSort(strList.ToArray(), 1000);
+
+        // Output part of the sorted list to verify correctness
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(sortedList[i]);
+        }
+
+        Console.WriteLine("Sorting completed.");
+    }
+}
+
+-----------------------------------------------------------------
+
+// add this part in order to test matrix multiplication
+
+
+class Program
+{
+    static void Main()
+    {
+        Process currentProcess = Process.GetCurrentProcess();
+        Console.WriteLine($"Process ID: {currentProcess.Id}, Process Name: {currentProcess.ProcessName}");
+
+        // Rest of your code
+        int rowsA = 1000;
+        int colsA = 5000;
+        int colsB = 1000;
+
+        int[,] matrixA = new int[rowsA, colsA];
+        int[,] matrixB = new int[colsA, colsB];
+        int[,] resultMatrix = new int[rowsA, colsB];
+
+        Random rand = new Random();
+        for (int i = 0; i < rowsA; i++)
+        {
+            for (int j = 0; j < colsA; j++)
+            {
+                matrixA[i, j] = rand.Next(1, 10);
+            }
+        }
+
+        for (int i = 0; i < colsA; i++)
+        {
+            for (int j = 0; j < colsB; j++)
+            {
+                matrixB[i, j] = rand.Next(1, 10);
+            }
+        }
+
+        int numThreads = 20; // Change this number to test with different thread counts
+        MatrixMultiplier.MultiplyMatricesConcurrently(matrixA, matrixB, resultMatrix, rowsA, colsA, colsB, numThreads);
+
+        // Optional: Print part of the result matrix to verify correctness
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                Console.Write(resultMatrix[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+
+        Console.WriteLine("Multiplication completed.");
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+}
