@@ -1,0 +1,14 @@
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\obj\Debug\net8.0\MatrixMultiplier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\obj\Debug\net8.0\MatrixMultiplier.AssemblyInfoInputs.cache
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\obj\Debug\net8.0\MatrixMultiplier.AssemblyInfo.cs
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\obj\Debug\net8.0\MatrixMultiplier.csproj.CoreCompileInputs.cache
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\bin\Debug\net8.0\MatrixMultiplier.exe
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\bin\Debug\net8.0\MatrixMultiplier.deps.json
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\bin\Debug\net8.0\MatrixMultiplier.runtimeconfig.json
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\bin\Debug\net8.0\MatrixMultiplier.dll
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\bin\Debug\net8.0\MatrixMultiplier.pdb
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\obj\Debug\net8.0\MatrixMultiplier.dll
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\obj\Debug\net8.0\refint\MatrixMultiplier.dll
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\obj\Debug\net8.0\MatrixMultiplier.pdb
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\obj\Debug\net8.0\MatrixMultiplier.genruntimeconfig.cache
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MatrixMultiplier\MatrixMultiplier\obj\Debug\net8.0\ref\MatrixMultiplier.dll

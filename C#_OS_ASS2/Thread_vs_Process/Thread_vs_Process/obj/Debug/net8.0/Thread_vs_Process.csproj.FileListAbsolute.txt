@@ -1,0 +1,14 @@
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\bin\Debug\net8.0\Thread_vs_Process.exe
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\bin\Debug\net8.0\Thread_vs_Process.deps.json
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\bin\Debug\net8.0\Thread_vs_Process.runtimeconfig.json
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\bin\Debug\net8.0\Thread_vs_Process.dll
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\bin\Debug\net8.0\Thread_vs_Process.pdb
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\obj\Debug\net8.0\Thread_vs_Process.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\obj\Debug\net8.0\Thread_vs_Process.AssemblyInfoInputs.cache
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\obj\Debug\net8.0\Thread_vs_Process.AssemblyInfo.cs
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\obj\Debug\net8.0\Thread_vs_Process.csproj.CoreCompileInputs.cache
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\obj\Debug\net8.0\Thread_vs_Process.dll
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\obj\Debug\net8.0\refint\Thread_vs_Process.dll
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\obj\Debug\net8.0\Thread_vs_Process.pdb
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\obj\Debug\net8.0\Thread_vs_Process.genruntimeconfig.cache
+C:\Users\gavvi\source\repos\C#_OS_ASS2\Thread_vs_Process\Thread_vs_Process\obj\Debug\net8.0\ref\Thread_vs_Process.dll

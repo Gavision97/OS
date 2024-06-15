@@ -1,0 +1,14 @@
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\bin\Debug\net8.0\MTMergeSort.exe
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\bin\Debug\net8.0\MTMergeSort.deps.json
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\bin\Debug\net8.0\MTMergeSort.runtimeconfig.json
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\bin\Debug\net8.0\MTMergeSort.dll
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\bin\Debug\net8.0\MTMergeSort.pdb
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\obj\Debug\net8.0\MTMergeSort.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\obj\Debug\net8.0\MTMergeSort.AssemblyInfoInputs.cache
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\obj\Debug\net8.0\MTMergeSort.AssemblyInfo.cs
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\obj\Debug\net8.0\MTMergeSort.csproj.CoreCompileInputs.cache
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\obj\Debug\net8.0\MTMergeSort.dll
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\obj\Debug\net8.0\refint\MTMergeSort.dll
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\obj\Debug\net8.0\MTMergeSort.pdb
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\obj\Debug\net8.0\MTMergeSort.genruntimeconfig.cache
+C:\Users\gavvi\source\repos\C#_OS_ASS2\MTMergeSort\MTMergeSort\obj\Debug\net8.0\ref\MTMergeSort.dll
