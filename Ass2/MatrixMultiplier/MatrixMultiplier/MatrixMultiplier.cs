@@ -1,8 +1,33 @@
 ﻿using System;
 using System.Threading;
 
+
+
+
 class MatrixMultiplier
 {
+    public static void Main(string[] args)
+    {
+        int[,] matrixA = new int[,]
+        {
+            {1, 2, 3 },
+            {1, 2, 3 },
+            {1, 2, 3 }
+
+        };
+        int[,] matrixB = new int[,]
+        {
+            {3,2,1 }, {3,2,2}, {3,2,3}
+        };
+        int[,] resultMatrix = new int[3,3];
+        int rowA = 3;
+        int rowB = 3;
+        int colsA = 3;
+        int colsB = 3;
+        int numThreads = 9;
+        MultiplyMatricesConcurrently(matrixA, matrixB, resultMatrix, rowA, rowB, colsA, colsB);
+        Console.WriteLine(resultMatrix.ToString());
+    }
     public static void MultiplyMatricesConcurrently(int[,] matrixA, int[,] matrixB,
         int[,] resultMatrix, int rowsA, int colsA, int colsB, int numThreads)
     {
@@ -16,8 +41,11 @@ class MatrixMultiplier
         for (int i = 0; i < numThreads; i++)
         {
             int startRow = currentRow;
-            int endRow = currentRow + rowsPerThread + (i < remainingRows ? 1 : 0) - 1;
+            int endRow = currentRow + rowsPerThread - 1;
 
+            if (i < remainingRows)
+                endRow += 1;
+       
             threads[i] = new Thread(() => MultiplyMatrixSection(matrixA, matrixB, resultMatrix, startRow, endRow, colsA, colsB));
             threads[i].Start();
 
