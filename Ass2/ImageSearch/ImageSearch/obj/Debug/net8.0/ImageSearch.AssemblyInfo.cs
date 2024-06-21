@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImageSearch")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82e979727fdae7acf86ab237e3e30b789f0c6da8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImageSearch")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImageSearch")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -31,9 +31,9 @@ namespace ImageSearch
             string algorithm = args[3];
 
             // Validate algorithm parameter
-            if (algorithm != "exact" && algorithm != "euclidean")
+            if (algorithm != "exact" && algorithm != "euclidian")
             {
-                Console.WriteLine("Error: Invalid algorithm specified. Use 'exact' or 'euclidean'.");
+                Console.WriteLine("Error: Invalid algorithm specified. Use 'exact' or 'euclidian'.");
                 return;
             }
 
@@ -42,8 +42,8 @@ namespace ImageSearch
             Bitmap image2;
             try
             {
-                image1 = new Bitmap(image1Path);
-                image2 = new Bitmap(image2Path);
+                image1 = LoadImage(image1Path);
+                image2 = LoadImage(image2Path);
             }
             catch (Exception e)
             {
@@ -52,9 +52,22 @@ namespace ImageSearch
             }
 
             // Convert images to 2D arrays of Color objects
-            Color[,] largeImage = ImageToColorArray(image1);
-            Color[,] smallImage = ImageToColorArray(image2);
+            Color[,] largeImage = null;
+            Color[,] smallImage = null;
+            Thread largeConvert = new Thread(() =>
+            {
+                largeImage = ImageToColorArray(image1);
 
+            });
+            largeConvert.Start();
+            Thread smallConvert = new Thread(() =>
+            {
+                smallImage = ImageToColorArray(image2);
+
+            });
+            smallConvert.Start();
+            smallConvert.Join();
+            largeConvert.Join();
             // Get dimensions of the images
             int largeWidth = largeImage.GetLength(0);
             int largeHeight = largeImage.GetLength(1);
@@ -65,18 +78,18 @@ namespace ImageSearch
             List<Point> matches = new List<Point>();
 
             // Calculate chunk size for dividing the work among threads
-            int chunkSize = largeHeight / nThreads;
+            int chunkSize = (largeHeight - smallHeight + 1 + nThreads - 1) / nThreads;
 
             // Create and start threads
             List<Thread> threads = new List<Thread>();
             for (int i = 0; i < nThreads; i++)
             {
                 int startRow = i * chunkSize;
-                int endRow = (i == nThreads - 1) ? largeHeight : (i + 1) * chunkSize;
+                int endRow = Math.Min(startRow + chunkSize, largeHeight - smallHeight + 1);
 
                 Thread thread = new Thread(() =>
                 {
-                    SearchInChunk(largeImage, smallImage, startRow, endRow, largeWidth, largeHeight, smallWidth, smallHeight, algorithm, matches);
+                    SearchInChunk(largeImage, smallImage, startRow, endRow, largeWidth, smallWidth, smallHeight, algorithm, matches);
                 });
 
                 threads.Add(thread);
@@ -97,14 +110,17 @@ namespace ImageSearch
                     Console.WriteLine($"{match.X},{match.Y}");
                 }
             }
-            else
-            {
-                Console.WriteLine("No matches found.");
-            }
-
+          
             // Wait for user input before closing (to keep the console window open)
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+        }
+
+        // Load image method supporting multiple formats including GIF
+        static Bitmap LoadImage(string imagePath)
+        {
+            using (Image image = Image.FromFile(imagePath))
+            {
+                return new Bitmap(image);
+            }
         }
 
         // Convert a Bitmap image to a 2D array of Color objects
@@ -127,11 +143,11 @@ namespace ImageSearch
 
         // Search for the small image in a specific chunk of the large image
         static void SearchInChunk(Color[,] largeImage, Color[,] smallImage, int startRow, int endRow,
-            int largeWidth, int largeHeight, int smallWidth, int smallHeight, string algorithm, List<Point> matches)
+            int largeWidth, int smallWidth, int smallHeight, string algorithm, List<Point> matches)
         {
             for (int x = 0; x <= largeWidth - smallWidth; x++)
             {
-                for (int y = startRow; y <= endRow - smallHeight; y++)
+                for (int y = startRow; y < endRow; y++)
                 {
                     if (IsMatch(largeImage, smallImage, x, y, smallWidth, smallHeight, algorithm))
                     {
@@ -162,7 +178,7 @@ namespace ImageSearch
                             return false;
                         }
                     }
-                    else if (algorithm == "euclidean")
+                    else if (algorithm == "euclidian")
                     {
                         double distance = Math.Sqrt(
                             Math.Pow(largePixel.R - smallPixel.R, 2) +

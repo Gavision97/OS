@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ImageSearch": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\user\\Downloads\\big.jpg\" \"C:\\Users\\user\\Downloads\\small.jpg\" 6 euclidian"
+    }
+  }
+}
