@@ -1,0 +1,15 @@
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\bin\Debug\net8.0\ThreadSafeBinaryTree..exe
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\bin\Debug\net8.0\ThreadSafeBinaryTree..deps.json
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\bin\Debug\net8.0\ThreadSafeBinaryTree..runtimeconfig.json
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\bin\Debug\net8.0\ThreadSafeBinaryTree..dll
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\bin\Debug\net8.0\ThreadSafeBinaryTree..pdb
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\ThreadSafeBinaryTree..GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\ThreadSafeBinaryTree..AssemblyInfoInputs.cache
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\ThreadSafeBinaryTree..AssemblyInfo.cs
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\ThreadSafeBinaryTree..csproj.CoreCompileInputs.cache
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\ThreadSafeBinaryTree..sourcelink.json
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\ThreadSafeBinaryTree..dll
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\refint\ThreadSafeBinaryTree..dll
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\ThreadSafeBinaryTree..pdb
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\ThreadSafeBinaryTree..genruntimeconfig.cache
+C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\ThreadSafeBinaryTree\ThreadSafeBinaryTree\obj\Debug\net8.0\ref\ThreadSafeBinaryTree..dll
