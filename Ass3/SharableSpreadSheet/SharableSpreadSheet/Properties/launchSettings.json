@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SharableSpreadSheet": {
+      "commandName": "Project",
+      "hotReloadEnabled": false
+    }
+  }
+}

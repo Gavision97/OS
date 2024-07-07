@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1E363E66-4F72-4887-ABB0-D02794E7B655}|SharableSpreadSheet\\SharableSpreadSheet.csproj|c:\\users\\ilay\\desktop\\os\\ass3\\sharablespreadsheet\\sharablespreadsheet\\sharablespreadsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E363E66-4F72-4887-ABB0-D02794E7B655}|SharableSpreadSheet\\SharableSpreadSheet.csproj|solutionrelative:sharablespreadsheet\\sharablespreadsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E363E66-4F72-4887-ABB0-D02794E7B655}|SharableSpreadSheet\\SharableSpreadSheet.csproj|c:\\users\\ilay\\desktop\\os\\ass3\\sharablespreadsheet\\sharablespreadsheet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E363E66-4F72-4887-ABB0-D02794E7B655}|SharableSpreadSheet\\SharableSpreadSheet.csproj|solutionrelative:sharablespreadsheet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +22,12 @@
               "Title": "SharableSpreadSheet.cs",
               "DocumentMoniker": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.cs",
               "RelativeDocumentMoniker": "SharableSpreadSheet\\SharableSpreadSheet.cs",
-              "ToolTip": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.cs",
-              "RelativeToolTip": "SharableSpreadSheet\\SharableSpreadSheet.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwC8AAAAAAAAA",
+              "ToolTip": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.cs*",
+              "RelativeToolTip": "SharableSpreadSheet\\SharableSpreadSheet.cs*",
+              "ViewState": "AQIAAK8AAAAAAAAAAAAkwAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-06T13:28:41.552Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\Program.cs",
-              "RelativeDocumentMoniker": "SharableSpreadSheet\\Program.cs",
-              "ToolTip": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\Program.cs",
-              "RelativeToolTip": "SharableSpreadSheet\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T13:28:11.127Z"
             }
           ]
         }

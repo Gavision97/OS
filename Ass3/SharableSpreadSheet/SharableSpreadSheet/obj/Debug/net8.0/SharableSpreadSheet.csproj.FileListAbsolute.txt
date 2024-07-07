@@ -1,0 +1,15 @@
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\bin\Debug\net8.0\SharableSpreadSheet.exe
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\bin\Debug\net8.0\SharableSpreadSheet.deps.json
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\bin\Debug\net8.0\SharableSpreadSheet.runtimeconfig.json
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\bin\Debug\net8.0\SharableSpreadSheet.dll
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\bin\Debug\net8.0\SharableSpreadSheet.pdb
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\SharableSpreadSheet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\SharableSpreadSheet.AssemblyInfoInputs.cache
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\SharableSpreadSheet.AssemblyInfo.cs
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\SharableSpreadSheet.csproj.CoreCompileInputs.cache
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\SharableSpreadSheet.sourcelink.json
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\SharableSpreadSheet.dll
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\refint\SharableSpreadSheet.dll
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\SharableSpreadSheet.pdb
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\SharableSpreadSheet.genruntimeconfig.cache
+C:\Users\ilay\Desktop\OS\Ass3\SharableSpreadSheet\SharableSpreadSheet\obj\Debug\net8.0\ref\SharableSpreadSheet.dll
