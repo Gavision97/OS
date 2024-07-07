@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gavvi\\Desktop\\Courses\\Second Semester\\OS\\OS\\Ass3\\ThreadSafeBinaryTree\\",
+  "WorkspaceRootPath": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\ThreadSafeBinaryTree\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D79C131-DCBB-456D-B918-DF5D50046086}|..\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree..csproj|c:\\users\\gavvi\\desktop\\courses\\second semester\\os\\os\\ass3\\threadsafebinarytree\\threadsafebinarytree\\threadsafebinarytree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D79C131-DCBB-456D-B918-DF5D50046086}|..\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree..csproj|solutionrelative:threadsafebinarytree\\threadsafebinarytree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D79C131-DCBB-456D-B918-DF5D50046086}|ThreadSafeBinaryTree\\ThreadSafeBinaryTree..csproj|c:\\users\\ilay\\desktop\\os\\ass3\\threadsafebinarytree\\threadsafebinarytree\\threadsafebinarytree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D79C131-DCBB-456D-B918-DF5D50046086}|ThreadSafeBinaryTree\\ThreadSafeBinaryTree..csproj|solutionrelative:threadsafebinarytree\\threadsafebinarytree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ThreadSafeBinaryTree.cs",
-              "DocumentMoniker": "C:\\Users\\gavvi\\Desktop\\Courses\\Second Semester\\OS\\OS\\Ass3\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree.cs",
+              "DocumentMoniker": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree.cs",
               "RelativeDocumentMoniker": "ThreadSafeBinaryTree\\ThreadSafeBinaryTree.cs",
-              "ToolTip": "C:\\Users\\gavvi\\Desktop\\Courses\\Second Semester\\OS\\OS\\Ass3\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree.cs",
+              "ToolTip": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree\\ThreadSafeBinaryTree.cs",
               "RelativeToolTip": "ThreadSafeBinaryTree\\ThreadSafeBinaryTree.cs",
-              "ViewState": "AQIAALQAAAAAAAAAAAAAAMIAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAL8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-06T09:36:24.22Z",
               "EditorCaption": ""

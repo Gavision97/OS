@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SharableSpreadSheet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7e7491c026cf8a6b1adad1009c708b6435f6adf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c38ac1df966c9046f517dbc8feff12fb8b9e028b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SharableSpreadSheet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SharableSpreadSheet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

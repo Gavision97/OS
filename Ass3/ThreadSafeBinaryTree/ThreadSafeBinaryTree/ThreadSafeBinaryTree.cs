@@ -56,8 +56,7 @@ namespace ThreadedBinarySearchTree
             {
                 current.ReferenceCount++;
             }
-
-            return current;
+                return current;
         }
 
         public void Delete(string item)
@@ -134,7 +133,6 @@ namespace ThreadedBinarySearchTree
                 treeLock.ExitReadLock();
             }
         }
-
         private int SearchRecursive(Node current, string item)
         {
             if (current == null)
