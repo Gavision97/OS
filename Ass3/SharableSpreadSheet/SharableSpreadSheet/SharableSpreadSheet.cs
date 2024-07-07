@@ -148,59 +148,57 @@ using System.Threading;
             }
         }
 
-        public void AddRow(int row1)
+    public void AddRow(int row1)
+    {
+        ValidateRow(row1);
+        structureLock.EnterWriteLock();
+        try
         {
-            ValidateRow(row1);
-            structureLock.EnterWriteLock();
-            try
+            nRows++;
+            var newCells = new Dictionary<(int, int), string>();
+            foreach (var kvp in spreadSheet)
             {
-                nRows++;
-                var newCells = new Dictionary<(int, int), string>();
-                foreach (var kvp in spreadSheet)
-                {
-                    var (row, col) = kvp.Key;
-                    if (row > row1)
-                        newCells[(row + 1, col)] = kvp.Value;
-                }
-                foreach (var newCell in newCells)
-                {
-                    spreadSheet[newCell.Key] = newCell.Value;
-                    spreadSheet.TryRemove((newCell.Key.Item1 - 1, newCell.Key.Item2), out _);
-                }
+                var (row, col) = kvp.Key;
+                if (row >= row1)
+                    newCells[(row + 1, col)] = kvp.Value;
             }
-            finally
+            foreach (var newCell in newCells)
             {
-                structureLock.ExitWriteLock();
+                spreadSheet[newCell.Key] = newCell.Value;
             }
         }
-
-        public void AddCol(int col1)
+        finally
         {
-            ValidateColumn(col1);
-            structureLock.EnterWriteLock();
-            try
+            structureLock.ExitWriteLock();
+        }
+    }
+
+    public void AddCol(int col1)
+    {
+        ValidateColumn(col1);
+        structureLock.EnterWriteLock();
+        try
+        {
+            nCols++;
+            var newCells = new Dictionary<(int, int), string>();
+            foreach (var kvp in spreadSheet)
             {
-                nCols++;
-                var newCells = new Dictionary<(int, int), string>();
-                foreach (var kvp in spreadSheet)
-                {
-                    var (row, col) = kvp.Key;
-                    if (col > col1)
-                        newCells[(row, col + 1)] = kvp.Value;
-                }
-                foreach (var newCell in newCells)
-                {
-                    spreadSheet[newCell.Key] = newCell.Value;
-                    spreadSheet.TryRemove((newCell.Key.Item1, newCell.Key.Item2 - 1), out _);
-                }
+                var (row, col) = kvp.Key;
+                if (col >= col1)
+                    newCells[(row, col + 1)] = kvp.Value;
             }
-            finally
+            foreach (var newCell in newCells)
             {
-                structureLock.ExitWriteLock();
+                spreadSheet[newCell.Key] = newCell.Value;
             }
         }
+        finally
+        {
+            structureLock.ExitWriteLock();
+        }
+    }
 
-        public Tuple<int, int>[] FindAll(string str, bool caseSensitive)
+    public Tuple<int, int>[] FindAll(string str, bool caseSensitive)
         {
             var result = new List<Tuple<int, int>>();
             if (searchSemaphore != null) searchSemaphore.Wait();
