@@ -1,18 +1,16 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 
-
-namespace SharableSpreadSheet
-{
-    class SharableSpreadSheet
+    public class SharableSpreadSheet
     {
-        private string[,] spreadSheet;
-        private ReaderWriterLockSlim[,] cellLocks;
+        private ConcurrentDictionary<(int, int), string> spreadSheet;
         private int nRows;
         private int nCols;
-        private int nUsers;
-        private SemaphoreSlim searchSemaphore;
+        private readonly SemaphoreSlim searchSemaphore;
+        private readonly ReaderWriterLockSlim structureLock = new ReaderWriterLockSlim();
 
         public SharableSpreadSheet(int nRows, int nCols, int nUsers = -1)
         {
@@ -21,122 +19,72 @@ namespace SharableSpreadSheet
 
             this.nRows = nRows;
             this.nCols = nCols;
-            this.nUsers = nUsers;
-            spreadSheet = new string[nRows, nCols];
-            cellLocks = new ReaderWriterLockSlim[nRows, nCols];
-
-            for (int i = 0; i < nRows; i++)
-                for (int j = 0; j < nCols; j++)
-                {
-                    spreadSheet[i, j] = string.Empty;
-                    cellLocks[i, j] = new ReaderWriterLockSlim();
-                }
-
+            spreadSheet = new ConcurrentDictionary<(int, int), string>();
             searchSemaphore = nUsers > 0 ? new SemaphoreSlim(nUsers, nUsers) : null;
         }
 
-        public String getCell(int row, int col)
+        public string GetCell(int row, int col)
         {
             ValidateCell(row, col);
-            cellLocks[row, col].EnterReadLock();
-            try
-            {
-                return spreadSheet[row, col];
-            }
-            finally
-            {
-                cellLocks[row, col].ExitReadLock();
-            }
+            return spreadSheet.TryGetValue((row, col), out var value) ? value : string.Empty;
         }
 
-        public void setCell(int row, int col, String str)
+        public void SetCell(int row, int col, string str)
         {
             ValidateCell(row, col);
-            cellLocks[row, col].EnterWriteLock();
-            try
-            {
-                spreadSheet[row, col] = str;
-            }
-            finally
-            {
-                cellLocks[row, col].ExitWriteLock();
-            }
+            spreadSheet[(row, col)] = str;
         }
 
-        public Tuple<int, int> searchString(String str)
+        public Tuple<int, int> SearchString(string str)
         {
-            return searchInRange(0, nCols - 1, 0, nRows - 1, str);
+            return SearchInRange(0, nCols - 1, 0, nRows - 1, str);
         }
 
-        public void exchangeRows(int row1, int row2)
+        public void ExchangeRows(int row1, int row2)
         {
             ValidateRow(row1);
             ValidateRow(row2);
             if (row1 == row2) return;
 
-            int minRow = Math.Min(row1, row2);
-            int maxRow = Math.Max(row1, row2);
-
-            for (int col = 0; col < nCols; col++)
-            {
-                cellLocks[minRow, col].EnterWriteLock();
-                cellLocks[maxRow, col].EnterWriteLock();
-            }
-
+            structureLock.EnterWriteLock();
             try
             {
                 for (int col = 0; col < nCols; col++)
                 {
-                    var temp = spreadSheet[row1, col];
-                    spreadSheet[row1, col] = spreadSheet[row2, col];
-                    spreadSheet[row2, col] = temp;
+                    var temp = GetCell(row1, col);
+                    SetCell(row1, col, GetCell(row2, col));
+                    SetCell(row2, col, temp);
                 }
             }
             finally
             {
-                for (int col = 0; col < nCols; col++)
-                {
-                    cellLocks[maxRow, col].ExitWriteLock();
-                    cellLocks[minRow, col].ExitWriteLock();
-                }
+                structureLock.ExitWriteLock();
             }
         }
 
-        public void exchangeCols(int col1, int col2)
+        public void ExchangeCols(int col1, int col2)
         {
             ValidateColumn(col1);
             ValidateColumn(col2);
             if (col1 == col2) return;
 
-            int minCol = Math.Min(col1, col2);
-            int maxCol = Math.Max(col1, col2);
-
-            for (int row = 0; row < nRows; row++)
-            {
-                cellLocks[row, minCol].EnterWriteLock();
-                cellLocks[row, maxCol].EnterWriteLock();
-            }
-
+            structureLock.EnterWriteLock();
             try
             {
                 for (int row = 0; row < nRows; row++)
                 {
-                    var temp = spreadSheet[row, col1];
-                    spreadSheet[row, col1] = spreadSheet[row, col2];
-                    spreadSheet[row, col2] = temp;
+                    var temp = GetCell(row, col1);
+                    SetCell(row, col1, GetCell(row, col2));
+                    SetCell(row, col2, temp);
                 }
             }
             finally
             {
-                for (int row = 0; row < nRows; row++)
-                {
-                    cellLocks[row, maxCol].ExitWriteLock();
-                    cellLocks[row, minCol].ExitWriteLock();
-                }
+                structureLock.ExitWriteLock();
             }
         }
 
-        public int searchInRow(int row, String str)
+        public int SearchInRow(int row, string str)
         {
             ValidateRow(row);
             if (searchSemaphore != null) searchSemaphore.Wait();
@@ -144,16 +92,8 @@ namespace SharableSpreadSheet
             {
                 for (int col = 0; col < nCols; col++)
                 {
-                    cellLocks[row, col].EnterReadLock();
-                    try
-                    {
-                        if (spreadSheet[row, col] == str)
-                            return col;
-                    }
-                    finally
-                    {
-                        cellLocks[row, col].ExitReadLock();
-                    }
+                    if (GetCell(row, col) == str)
+                        return col;
                 }
                 return -1;
             }
@@ -163,7 +103,7 @@ namespace SharableSpreadSheet
             }
         }
 
-        public int searchInCol(int col, String str)
+        public int SearchInCol(int col, string str)
         {
             ValidateColumn(col);
             if (searchSemaphore != null) searchSemaphore.Wait();
@@ -171,16 +111,8 @@ namespace SharableSpreadSheet
             {
                 for (int row = 0; row < nRows; row++)
                 {
-                    cellLocks[row, col].EnterReadLock();
-                    try
-                    {
-                        if (spreadSheet[row, col] == str)
-                            return row;
-                    }
-                    finally
-                    {
-                        cellLocks[row, col].ExitReadLock();
-                    }
+                    if (GetCell(row, col) == str)
+                        return row;
                 }
                 return -1;
             }
@@ -190,7 +122,7 @@ namespace SharableSpreadSheet
             }
         }
 
-        public Tuple<int, int> searchInRange(int col1, int col2, int row1, int row2, String str)
+        public Tuple<int, int> SearchInRange(int col1, int col2, int row1, int row2, string str)
         {
             ValidateCell(row1, col1);
             ValidateCell(row2, col2);
@@ -204,16 +136,8 @@ namespace SharableSpreadSheet
                 {
                     for (int col = col1; col <= col2; col++)
                     {
-                        cellLocks[row, col].EnterReadLock();
-                        try
-                        {
-                            if (spreadSheet[row, col] == str)
-                                return Tuple.Create(row, col);
-                        }
-                        finally
-                        {
-                            cellLocks[row, col].ExitReadLock();
-                        }
+                        if (GetCell(row, col) == str)
+                            return Tuple.Create(row, col);
                     }
                 }
                 return null;
@@ -224,100 +148,68 @@ namespace SharableSpreadSheet
             }
         }
 
-        public void addRow(int row1)
+    public void AddRow(int row1)
+    {
+        ValidateRow(row1);
+        structureLock.EnterWriteLock();
+        try
         {
-            ValidateRow(row1);
-
-            lock (this)
+            nRows++;
+            var newCells = new Dictionary<(int, int), string>();
+            foreach (var kvp in spreadSheet)
             {
-                nRows++;
-                var newSpreadSheet = new string[nRows, nCols];
-                var newCellLocks = new ReaderWriterLockSlim[nRows, nCols];
-
-                for (int row = 0; row <= row1; row++)
-                {
-                    for (int col = 0; col < nCols; col++)
-                    {
-                        newSpreadSheet[row, col] = spreadSheet[row, col];
-                        newCellLocks[row, col] = cellLocks[row, col];
-                    }
-                }
-
-
-                for (int col = 0; col < nCols; col++)
-                {
-                    newSpreadSheet[row1 + 1, col] = string.Empty;
-                    newCellLocks[row1 + 1, col] = new ReaderWriterLockSlim();
-                }
-
-                for (int row = row1 + 1; row < nRows - 1; row++)
-                {
-                    for (int col = 0; col < nCols; col++)
-                    {
-                        newSpreadSheet[row + 1, col] = spreadSheet[row, col];
-                        newCellLocks[row + 1, col] = cellLocks[row, col];
-                    }
-                }
-
-                spreadSheet = newSpreadSheet;
-                cellLocks = newCellLocks;
+                var (row, col) = kvp.Key;
+                if (row >= row1)
+                    newCells[(row + 1, col)] = kvp.Value;
+            }
+            foreach (var newCell in newCells)
+            {
+                spreadSheet[newCell.Key] = newCell.Value;
             }
         }
-
-        public void addCol(int col1)
+        finally
         {
-            ValidateColumn(col1);
+            structureLock.ExitWriteLock();
+        }
+    }
 
-            lock (this)
+    public void AddCol(int col1)
+    {
+        ValidateColumn(col1);
+        structureLock.EnterWriteLock();
+        try
+        {
+            nCols++;
+            var newCells = new Dictionary<(int, int), string>();
+            foreach (var kvp in spreadSheet)
             {
-                nCols++;
-                var newSpreadSheet = new string[nRows, nCols];
-                var newCellLocks = new ReaderWriterLockSlim[nRows, nCols];
-
-                for (int row = 0; row < nRows; row++)
-                {
-                    for (int col = 0; col <= col1; col++)
-                    {
-                        newSpreadSheet[row, col] = spreadSheet[row, col];
-                        newCellLocks[row, col] = cellLocks[row, col];
-                    }
-                    newSpreadSheet[row, col1 + 1] = string.Empty;
-                    newCellLocks[row, col1 + 1] = new ReaderWriterLockSlim();
-                    for (int col = col1 + 1; col < nCols - 1; col++)
-                    {
-                        newSpreadSheet[row, col + 1] = spreadSheet[row, col];
-                        newCellLocks[row, col + 1] = cellLocks[row, col];
-                    }
-                }
-
-                spreadSheet = newSpreadSheet;
-                cellLocks = newCellLocks;
+                var (row, col) = kvp.Key;
+                if (col >= col1)
+                    newCells[(row, col + 1)] = kvp.Value;
+            }
+            foreach (var newCell in newCells)
+            {
+                spreadSheet[newCell.Key] = newCell.Value;
             }
         }
+        finally
+        {
+            structureLock.ExitWriteLock();
+        }
+    }
 
-        public Tuple<int, int>[] findAll(String str, bool caseSensitive)
+    public Tuple<int, int>[] FindAll(string str, bool caseSensitive)
         {
             var result = new List<Tuple<int, int>>();
             if (searchSemaphore != null) searchSemaphore.Wait();
             try
             {
-                for (int row = 0; row < nRows; row++)
+                StringComparison comparison = caseSensitive ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase;
+                foreach (var kvp in spreadSheet)
                 {
-                    for (int col = 0; col < nCols; col++)
+                    if (string.Equals(kvp.Value, str, comparison))
                     {
-                        cellLocks[row, col].EnterReadLock();
-                        try
-                        {
-                            if (caseSensitive ? spreadSheet[row, col] == str :
-                                                spreadSheet[row, col].Equals(str, StringComparison.OrdinalIgnoreCase))
-                            {
-                                result.Add(Tuple.Create(row, col));
-                            }
-                        }
-                        finally
-                        {
-                            cellLocks[row, col].ExitReadLock();
-                        }
+                        result.Add(Tuple.Create(kvp.Key.Item1, kvp.Key.Item2));
                     }
                 }
             }
@@ -328,57 +220,30 @@ namespace SharableSpreadSheet
             return result.ToArray();
         }
 
-        public void setAll(String oldStr, String newStr, bool caseSensitive)
+        public void SetAll(string oldStr, string newStr, bool caseSensitive)
         {
-            for (int row = 0; row < nRows; row++)
+            StringComparison comparison = caseSensitive ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase;
+            foreach (var kvp in spreadSheet)
             {
-                for (int col = 0; col < nCols; col++)
+                if (string.Equals(kvp.Value, oldStr, comparison))
                 {
-                    cellLocks[row, col].EnterUpgradeableReadLock();
-                    try
-                    {
-                        if (caseSensitive ? spreadSheet[row, col] == oldStr :
-                                            spreadSheet[row, col].Equals(oldStr, StringComparison.OrdinalIgnoreCase))
-                        {
-                            cellLocks[row, col].EnterWriteLock();
-                            try
-                            {
-                                spreadSheet[row, col] = newStr;
-                            }
-                            finally
-                            {
-                                cellLocks[row, col].ExitWriteLock();
-                            }
-                        }
-                    }
-                    finally
-                    {
-                        cellLocks[row, col].ExitUpgradeableReadLock();
-                    }
+                    spreadSheet.TryUpdate(kvp.Key, newStr, kvp.Value);
                 }
             }
         }
 
-        public Tuple<int, int> getSize()
+        public Tuple<int, int> GetSize()
         {
             return Tuple.Create(nRows, nCols);
         }
 
-        public void print()
+        public void Print()
         {
             for (int row = 0; row < nRows; row++)
             {
                 for (int col = 0; col < nCols; col++)
                 {
-                    cellLocks[row, col].EnterReadLock();
-                    try
-                    {
-                        Console.WriteLine($"[{row},{col}] {spreadSheet[row, col]}");
-                    }
-                    finally
-                    {
-                        cellLocks[row, col].ExitReadLock();
-                    }
+                    Console.WriteLine($"[{row},{col}] {GetCell(row, col)}");
                 }
             }
         }
@@ -400,5 +265,6 @@ namespace SharableSpreadSheet
             if (col < 0 || col >= nCols)
                 throw new ArgumentException("Invalid column index.");
         }
+
+
     }
-}
