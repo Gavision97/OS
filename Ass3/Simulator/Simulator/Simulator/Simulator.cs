@@ -28,7 +28,7 @@ namespace SharableSpreadSheet.Simulator
             for (int i = 0; i < nRows; i++)
             {
                 for (int j = 0; j < nCols; j++)
-                    spreadSheet.SetCell(i, j, String.Format("Grade99Cell{0}{1}", i, j));
+                    spreadSheet.SetCell(i, j, String.Format("GarlicBreadCell{0}{1}", i, j));
 
             }
 
@@ -72,15 +72,15 @@ namespace SharableSpreadSheet.Simulator
                     Console.WriteLine(String.Format("User [{0}]: string '{1}' found in cell[{2},{3}]", threadId, cell, row, col));
                     break;
                 case 2:
-                    spreadSheet.SetCell(row, col, "Grade 100");
-                    Console.WriteLine(String.Format("User [{0}]: string 'Grade 100' inserted to cell[{1},{2}].", threadId, row, col));
+                    spreadSheet.SetCell(row, col, "Pizza Margarita");
+                    Console.WriteLine(String.Format("User [{0}]: string 'Pizza Margarita' inserted to cell[{1},{2}].", threadId, row, col));
                     break;
                 case 3:
-                    Tuple<int, int> result = spreadSheet.SearchString("Grade 100");
+                    Tuple<int, int> result = spreadSheet.SearchString("Pizza Margarita");
                     if (result == null)
-                        Console.WriteLine(String.Format("User [{0}]: String 'Grade 100' not in spreadsheet.", threadId));
+                        Console.WriteLine(String.Format("User [{0}]: String 'Pizza Margarita' not in spreadsheet.", threadId));
                     else
-                        Console.WriteLine(String.Format("User[{0}]: String 'Grade 100' found in cell[{1},{2}].", threadId, result.Item1, result.Item2));
+                        Console.WriteLine(String.Format("User[{0}]: String 'Pizza Margarita' found in cell[{1},{2}].", threadId, result.Item1, result.Item2));
                     break;
                 case 4:
                     int row1 = rnd.Next(nRows);
@@ -103,39 +103,43 @@ namespace SharableSpreadSheet.Simulator
                     Console.WriteLine(String.Format("User [{0}]: columns {1} and {2} exchanged successfully.", threadId, col, col1));
                     break;
                 case 6:
-                    int rowResult = spreadSheet.SearchInRow(row, "Grade 100");
+                    int rowResult = spreadSheet.SearchInRow(row, "Pizza Margarita");
                     if (rowResult != -1)
-                        Console.WriteLine(String.Format("User[{0}]: String 'Grade 100' found in cell[{1},{2}].", threadId, row, rowResult));
+                        Console.WriteLine(String.Format("User[{0}]: String 'Pizza Margarita' found in cell[{1},{2}].", threadId, row, rowResult));
                     else
-                        Console.WriteLine(String.Format("User[{0}]: String 'Grade 100' wasn't found in row {1}.", threadId, row));
+                        Console.WriteLine(String.Format("User[{0}]: String 'Pizza Margarita' wasn't found in row {1}.", threadId, row));
                     break;
                 case 7:
-                    int colResult = spreadSheet.SearchInCol(col, "Grade 100");
+                    int colResult = spreadSheet.SearchInCol(col, "Pizza Margarita0");
                     if (colResult != -1)
-                        Console.WriteLine(String.Format("User[{0}]: String 'Grade 100' found in cell[{1},{2}].", threadId, colResult, col));
+                        Console.WriteLine(String.Format("User[{0}]: String 'Pizza Margarita' found in cell[{1},{2}].", threadId, colResult, col));
                     else
-                        Console.WriteLine(String.Format("User[{0}]: String 'Grade 100' wasn't found in column {1}.", threadId, col));
+                        Console.WriteLine(String.Format("User[{0}]: String 'Pizza Margarita' wasn't found in column {1}.", threadId, col));
                     break;
                 case 8:
                     int row2 = rnd.Next(row, nRows);
                     int col2 = rnd.Next(col, nCols);
-                    Tuple<int, int> rangeResult = spreadSheet.SearchInRange(col, col2, row, row2, "Grade 100");
+                    Tuple<int, int> rangeResult = spreadSheet.SearchInRange(col, col2, row, row2, "Pizza Margarita");
                     if (rangeResult != null)
-                        Console.WriteLine(String.Format("User[{0}]: String 'Grade 100' found in cell[{1},{2}].", threadId, rangeResult.Item1, rangeResult.Item2));
+                        Console.WriteLine(String.Format("User[{0}]: String 'Pizza Margarita' found in cell[{1},{2}].", threadId, rangeResult.Item1, rangeResult.Item2));
                     break;
                 case 9:
                     spreadSheet.AddRow(row);
                     Console.WriteLine(String.Format("User[{0}]: a new row added after row {1}.", threadId, row));
                     break;
                 case 10:
-                    bool caseSen = rnd.Next(2) == 1;
-                    Tuple<int, int>[] findAllResult = spreadSheet.FindAll("Grade 100", caseSen);
-                    Console.WriteLine(String.Format("User[{0}]:The string 'Grade 100' appear {1} times in the spreadsheet", threadId, findAllResult.Length));
+                    spreadSheet.AddCol(col);
+                    Console.WriteLine(String.Format("User[{0}]: a new column added after column {1}.", threadId, col));
                     break;
                 case 11:
+                    bool caseSen = rnd.Next(2) == 1;
+                    Tuple<int, int>[] findAllResult = spreadSheet.FindAll("Pizza Margarita", caseSen);
+                    Console.WriteLine(String.Format("User[{0}]:The string 'Pizza Margarita' appear {1} times in the spreadsheet", threadId, findAllResult.Length));
+                    break;
+                case 12:
                     bool caseSensitive = rnd.Next(2) == 1;
-                    spreadSheet.SetAll("Grade 100", "Grade 110", caseSensitive);
-                    Console.WriteLine(String.Format("User[{0}]:The string 'Grade 100' changed successfully to 'Grade 110'.", threadId));
+                    spreadSheet.SetAll("Pizza Margarita", "Pizza Napolitana", caseSensitive);
+                    Console.WriteLine(String.Format("User[{0}]:The string 'Pizza Margarita' changed successfully to 'Pizza Napolitana'.", threadId));
                     break;
                 default:
                     Tuple<int, int> size = spreadSheet.GetSize();
