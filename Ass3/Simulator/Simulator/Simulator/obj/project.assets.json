@@ -8,19 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\gavvi\\.nuget\\packages\\": {}
+    "C:\\Users\\ilay\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gavvi\\Desktop\\Courses\\Second Semester\\OS\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\Simulator.csproj",
+      "projectUniqueName": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\Simulator.csproj",
       "projectName": "Simulator",
-      "projectPath": "C:\\Users\\gavvi\\Desktop\\Courses\\Second Semester\\OS\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\Simulator.csproj",
-      "packagesPath": "C:\\Users\\gavvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gavvi\\Desktop\\Courses\\Second Semester\\OS\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\obj\\",
+      "projectPath": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\Simulator.csproj",
+      "packagesPath": "C:\\Users\\ilay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\gavvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ilay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +33,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
