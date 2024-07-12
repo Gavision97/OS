@@ -13,3 +13,18 @@ C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\Simulator\Simulator\Si
 C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.pdb
 C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.genruntimeconfig.cache
 C:\Users\gavvi\Desktop\Courses\Second Semester\OS\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\ref\Simulator.dll
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\bin\Debug\net8.0\Simulator.exe
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\bin\Debug\net8.0\Simulator.deps.json
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\bin\Debug\net8.0\Simulator.runtimeconfig.json
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\bin\Debug\net8.0\Simulator.dll
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\bin\Debug\net8.0\Simulator.pdb
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.AssemblyInfo.cs
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.sourcelink.json
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.dll
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\refint\Simulator.dll
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.pdb
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\Simulator.genruntimeconfig.cache
+C:\Users\user\Desktop\OS\Ass3\Simulator\Simulator\Simulator\obj\Debug\net8.0\ref\Simulator.dll

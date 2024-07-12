@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace SharableSpreadSheet.Simulator
+namespace Simulator
 {
     internal class Simulator
     {

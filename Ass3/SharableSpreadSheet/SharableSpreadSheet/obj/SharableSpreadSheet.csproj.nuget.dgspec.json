@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.csproj": {}
+    "C:\\Users\\user\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.csproj": {
+    "C:\\Users\\user\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.csproj",
         "projectName": "SharableSpreadSheet",
-        "projectPath": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.csproj",
-        "packagesPath": "C:\\Users\\ilay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\SharableSpreadSheet.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\OS\\Ass3\\SharableSpreadSheet\\SharableSpreadSheet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ilay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

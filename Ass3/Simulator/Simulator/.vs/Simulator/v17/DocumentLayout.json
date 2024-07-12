@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33C789BF-D2FE-4A7E-9F0C-6488730CAAF9}|Simulator\\Simulator.csproj|c:\\users\\ilay\\desktop\\os\\ass3\\simulator\\simulator\\simulator\\simulator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33C789BF-D2FE-4A7E-9F0C-6488730CAAF9}|Simulator\\Simulator.csproj|c:\\users\\user\\desktop\\os\\ass3\\simulator\\simulator\\simulator\\simulator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33C789BF-D2FE-4A7E-9F0C-6488730CAAF9}|Simulator\\Simulator.csproj|solutionrelative:simulator\\simulator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33C789BF-D2FE-4A7E-9F0C-6488730CAAF9}|Simulator\\Simulator.csproj|c:\\users\\ilay\\desktop\\os\\ass3\\simulator\\simulator\\simulator\\sharablespreadsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33C789BF-D2FE-4A7E-9F0C-6488730CAAF9}|Simulator\\Simulator.csproj|c:\\users\\user\\desktop\\os\\ass3\\simulator\\simulator\\simulator\\sharablespreadsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33C789BF-D2FE-4A7E-9F0C-6488730CAAF9}|Simulator\\Simulator.csproj|solutionrelative:simulator\\sharablespreadsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,23 +24,24 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "SharableSpreadSheet.cs",
-              "DocumentMoniker": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\SharableSpreadSheet.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\SharableSpreadSheet.cs",
               "RelativeDocumentMoniker": "Simulator\\SharableSpreadSheet.cs",
-              "ToolTip": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\SharableSpreadSheet.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\SharableSpreadSheet.cs",
               "RelativeToolTip": "Simulator\\SharableSpreadSheet.cs",
-              "ViewState": "AQIAAKsAAAAAAAAAAAAAALIAAAAAAAAA",
+              "ViewState": "AQIAACkBAAAAAAAAAAAiwEQBAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T16:35:06.635Z"
+              "WhenOpened": "2024-07-09T16:35:06.635Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Simulator.cs",
-              "DocumentMoniker": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\Simulator.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\Simulator.cs",
               "RelativeDocumentMoniker": "Simulator\\Simulator.cs",
-              "ToolTip": "C:\\Users\\ilay\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\Simulator.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\OS\\Ass3\\Simulator\\Simulator\\Simulator\\Simulator.cs",
               "RelativeToolTip": "Simulator\\Simulator.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAADwv5YAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-09T16:34:47.56Z",
               "EditorCaption": ""

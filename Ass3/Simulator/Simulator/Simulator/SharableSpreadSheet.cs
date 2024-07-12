@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 using System.Threading;
 
-namespace SharableSpreadSheet
+namespace Simulator
 {
     public class SharableSpreadSheet
     {
-        private ConcurrentDictionary<(int, int), string> spreadSheet;
+        private Dictionary<(int, int), string> spreadSheet;
         private int nRows;
         private int nCols;
         private readonly SemaphoreSlim searchSemaphore;
         private readonly ReaderWriterLockSlim structureLock = new ReaderWriterLockSlim();
+        private readonly Mutex cellMutex = new Mutex();
 
         public SharableSpreadSheet(int nRows, int nCols, int nUsers = -1)
         {
@@ -22,20 +20,36 @@ namespace SharableSpreadSheet
 
             this.nRows = nRows;
             this.nCols = nCols;
-            spreadSheet = new ConcurrentDictionary<(int, int), string>();
+            spreadSheet = new Dictionary<(int, int), string>();
             searchSemaphore = nUsers > 0 ? new SemaphoreSlim(nUsers, nUsers) : null;
         }
 
         public string GetCell(int row, int col)
         {
             ValidateCell(row, col);
-            return spreadSheet.TryGetValue((row, col), out var value) ? value : string.Empty;
+            cellMutex.WaitOne();
+            try
+            {
+                return spreadSheet.TryGetValue((row, col), out var value) ? value : string.Empty;
+            }
+            finally
+            {
+                cellMutex.ReleaseMutex();
+            }
         }
 
         public void SetCell(int row, int col, string str)
         {
             ValidateCell(row, col);
-            spreadSheet[(row, col)] = str;
+            cellMutex.WaitOne();
+            try
+            {
+                spreadSheet[(row, col)] = str;
+            }
+            finally
+            {
+                cellMutex.ReleaseMutex();
+            }
         }
 
         public Tuple<int, int> SearchString(string str)
@@ -159,15 +173,23 @@ namespace SharableSpreadSheet
             {
                 nRows++;
                 var newCells = new Dictionary<(int, int), string>();
-                foreach (var kvp in spreadSheet)
+                cellMutex.WaitOne();
+                try
                 {
-                    var (row, col) = kvp.Key;
-                    if (row >= row1)
-                        newCells[(row + 1, col)] = kvp.Value;
+                    foreach (var kvp in spreadSheet)
+                    {
+                        var (row, col) = kvp.Key;
+                        if (row >= row1)
+                            newCells[(row + 1, col)] = kvp.Value;
+                    }
+                    foreach (var newCell in newCells)
+                    {
+                        spreadSheet[newCell.Key] = newCell.Value;
+                    }
                 }
-                foreach (var newCell in newCells)
+                finally
                 {
-                    spreadSheet[newCell.Key] = newCell.Value;
+                    cellMutex.ReleaseMutex();
                 }
             }
             finally
@@ -184,15 +206,23 @@ namespace SharableSpreadSheet
             {
                 nCols++;
                 var newCells = new Dictionary<(int, int), string>();
-                foreach (var kvp in spreadSheet)
+                cellMutex.WaitOne();
+                try
                 {
-                    var (row, col) = kvp.Key;
-                    if (col >= col1)
-                        newCells[(row, col + 1)] = kvp.Value;
+                    foreach (var kvp in spreadSheet)
+                    {
+                        var (row, col) = kvp.Key;
+                        if (col >= col1)
+                            newCells[(row, col + 1)] = kvp.Value;
+                    }
+                    foreach (var newCell in newCells)
+                    {
+                        spreadSheet[newCell.Key] = newCell.Value;
+                    }
                 }
-                foreach (var newCell in newCells)
+                finally
                 {
-                    spreadSheet[newCell.Key] = newCell.Value;
+                    cellMutex.ReleaseMutex();
                 }
             }
             finally
@@ -208,12 +238,20 @@ namespace SharableSpreadSheet
             try
             {
                 StringComparison comparison = caseSensitive ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase;
-                foreach (var kvp in spreadSheet)
+                cellMutex.WaitOne();
+                try
                 {
-                    if (string.Equals(kvp.Value, str, comparison))
+                    foreach (var kvp in spreadSheet)
                     {
-                        result.Add(Tuple.Create(kvp.Key.Item1, kvp.Key.Item2));
+                        if (string.Equals(kvp.Value, str, comparison))
+                        {
+                            result.Add(Tuple.Create(kvp.Key.Item1, kvp.Key.Item2));
+                        }
                     }
+                }
+                finally
+                {
+                    cellMutex.ReleaseMutex();
                 }
             }
             finally
@@ -226,12 +264,20 @@ namespace SharableSpreadSheet
         public void SetAll(string oldStr, string newStr, bool caseSensitive)
         {
             StringComparison comparison = caseSensitive ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase;
-            foreach (var kvp in spreadSheet)
+            cellMutex.WaitOne();
+            try
             {
-                if (string.Equals(kvp.Value, oldStr, comparison))
+                foreach (var kvp in spreadSheet)
                 {
-                    spreadSheet.TryUpdate(kvp.Key, newStr, kvp.Value);
+                    if (string.Equals(kvp.Value, oldStr, comparison))
+                    {
+                        spreadSheet[kvp.Key] = newStr;
+                    }
                 }
+            }
+            finally
+            {
+                cellMutex.ReleaseMutex();
             }
         }
 
@@ -242,29 +288,14 @@ namespace SharableSpreadSheet
 
         public void Print()
         {
-            structureLock.EnterReadLock();
-            try
+            for (int row = 0; row < nRows; row++)
             {
-                for (int row = 0; row < nRows; row++)
+                for (int col = 0; col < nCols; col++)
                 {
-                    for (int col = 0; col < nCols; col++)
-                    {
-                        var value = GetCell(row, col);
-                        Console.Write(value);
-                        if (col < nCols - 1)
-                        {
-                            Console.Write(", ");
-                        }
-                    }
-                    Console.WriteLine();
+                    Console.WriteLine($"[{row},{col}] {GetCell(row, col)}");
                 }
             }
-            finally
-            {
-                structureLock.ExitReadLock();
-            }
         }
-
 
         private void ValidateCell(int row, int col)
         {
@@ -284,5 +315,11 @@ namespace SharableSpreadSheet
                 throw new ArgumentException("Invalid column index.");
         }
 
+        public void Dispose()
+        {
+            cellMutex.Dispose();
+            structureLock.Dispose();
+            searchSemaphore?.Dispose();
+        }
     }
 }
